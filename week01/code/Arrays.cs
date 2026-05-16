@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 public static class Arrays
 {
@@ -16,5 +17,22 @@ public static class Arrays
 
         // Return the array
         return result;
+    }
+
+    public static void RotateListRight(List<int> data)
+    {
+        if (data.Count <= 1)
+        {
+            return;
+        }
+
+        int last = data[data.Count - 1];
+
+        for (int i = data.Count - 1; i > 0; i--)
+        {
+            data[i] = data[i - 1];
+        }
+
+        data[0] = last;
     }
 }
